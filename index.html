@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070a0f"><meta name="description" content="Elyndra — an interactive fantasy world atlas, codex, timeline and visual encyclopedia."><title>Elyndra — Interactive Visual Atlas</title><link rel="stylesheet" href="styles.css">
+<style>
+.lore-essentials-panel{margin:28px auto 0;max-width:1400px;padding:24px;border:1px solid rgba(255,255,255,.10);border-radius:18px;background:linear-gradient(145deg,rgba(20,24,30,.92),rgba(11,14,18,.94));box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.lore-essentials-head{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+.lore-essentials-head h2{margin:.2rem 0 .35rem}.lore-essentials-head p{margin:0;opacity:.72}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;opacity:.62}
+.lore-stats{text-align:right;min-width:90px}.lore-stats strong{display:block;font-size:1.8rem}.lore-stats span{font-size:.7rem;opacity:.6;text-transform:uppercase;letter-spacing:.1em}
+.lore-controls{display:flex;gap:10px;margin:18px 0}.lore-controls input,.lore-controls select{flex:1;min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.04);color:inherit;padding:10px 12px}
+.lore-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.lore-card{padding:15px;border:1px solid rgba(255,255,255,.08);border-radius:13px;background:rgba(255,255,255,.025);transition:transform .2s ease,border-color .2s ease}
+.lore-card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.2)}
+.lore-meta{display:flex;justify-content:space-between;gap:8px;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;opacity:.6}
+.lore-card h3{font-size:1rem;margin:8px 0}.lore-card p{font-size:.86rem;line-height:1.55;margin:0;opacity:.78}
+@media(max-width:650px){.lore-essentials-panel{padding:16px}.lore-essentials-head{display:block}.lore-stats{text-align:left;margin-top:12px}.lore-controls{flex-direction:column}}
+</style>
+
+<style id="phase16-30-polish">
+:root{--atlas-panel:rgba(14,17,22,.94);--atlas-line:rgba(255,255,255,.10);--atlas-soft:rgba(255,255,255,.055)}
+.atlas-commandbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(9,11,14,.84);border-bottom:1px solid var(--atlas-line)}
+.atlas-commandbar-inner{max-width:1440px;margin:auto;display:flex;gap:8px;align-items:center;padding:9px 16px;overflow:auto}
+.atlas-commandbar button{white-space:nowrap;border:1px solid var(--atlas-line);background:var(--atlas-soft);color:inherit;border-radius:999px;padding:7px 12px;font:inherit;cursor:pointer}
+.atlas-commandbar button:hover,.atlas-commandbar button:focus-visible{border-color:rgba(255,255,255,.3);outline:2px solid rgba(255,255,255,.14);outline-offset:2px}
+.atlas-commandbar .phase-badge{margin-left:auto;opacity:.58;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.atlas-hub{max-width:1440px;margin:24px auto;padding:0 16px}
+.atlas-hub-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.atlas-hub-card{min-height:112px;border:1px solid var(--atlas-line);border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));padding:15px;text-align:left;cursor:pointer;color:inherit}
+.atlas-hub-card:hover,.atlas-hub-card:focus-visible{transform:translateY(-2px);border-color:rgba(255,255,255,.22);outline:2px solid rgba(255,255,255,.1);outline-offset:2px}
+.atlas-hub-card b{display:block;margin-bottom:6px}.atlas-hub-card span{font-size:.78rem;opacity:.65;line-height:1.4}
+.atlas-release{display:flex;gap:10px;align-items:center;justify-content:space-between;max-width:1440px;margin:0 auto 16px;padding:10px 16px;color:rgba(255,255,255,.62);font-size:.74rem}
+.atlas-release strong{color:inherit}
+@media(max-width:1000px){.atlas-hub-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.atlas-hub-grid{grid-template-columns:repeat(2,1fr)}.atlas-commandbar-inner{padding:8px}.atlas-release{display:block}}
+@media(prefers-reduced-motion:reduce){.atlas-hub-card{transition:none!important}}
+</style>
+</head><body>
+<a class="skip" href="#view">Skip to content</a><div class="ambient"><canvas id="ambientCanvas" aria-hidden="true"></canvas></div><div class="app"><header class="topbar"><div class="brand"><button class="sigil mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button><div class="sigil" aria-hidden="true">✦</div><div><div class="eyebrow">The World Atlas</div><h1>ELYNDRA</h1><small>Canonical visual encyclopedia</small></div></div><div class="world-status" aria-label="Atlas status"><span class="world-status-dot"></span><span>V15 · CANON LOCKED</span></div><div class="searchbox"><span class="searchicon">⌕</span><input id="globalSearch" autocomplete="off" placeholder="Search places, peoples, characters, history…" aria-label="Search Elyndra"><span class="kbd">/ or Ctrl K</span></div><nav class="topnav" aria-label="Primary"><button class="navbtn active" data-view="atlas">⌖ <span>Atlas</span></button><button class="navbtn" data-view="codex">▤ <span>Codex</span></button><button class="navbtn" data-view="timeline">◷ <span>Timeline</span></button><button class="navbtn" data-view="network">⌘ <span>Networks</span></button><button class="navbtn" data-view="visuals">▧ <span>Visuals</span></button></nav></header><div class="layout"><aside class="sidebar" id="sidebar" aria-label="World Bible navigation"></aside><main class="main"><div class="content" id="view" tabindex="-1"></div></main><aside class="rightbar" id="quick" aria-label="Explorer's journal"></aside></div><nav class="mobile-nav" aria-label="Mobile navigation"><button data-view="atlas" class="active">⌖<br>Atlas</button><button data-view="codex">▤<br>Codex</button><button data-view="timeline">◷<br>Time</button><button data-view="visuals">▧<br>Visuals</button></nav><div class="command" id="command" aria-hidden="true"><div class="command-box" role="dialog" aria-modal="true" aria-label="Elyndra command search"><div class="command-input"><span>⌕</span><input id="commandInput" autocomplete="off" placeholder="Search the world…"><button class="iconbtn" id="commandClose">Esc</button></div><div class="command-results" id="commandResults"></div></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div></div><script src="app.js"></script>
+
+
+<script>
+window.addEventListener('DOMContentLoaded',async()=>{
+  if(!window.ELYNDRA_DATA){
+    try{ const r=await fetch('data.json'); if(r.ok) window.ELYNDRA_DATA=await r.json(); }catch(e){}
+  }
+  window.dispatchEvent(new Event('elyndra-data-ready'));
+});
+</script>
+
+<script>
+(function(){
+  let LORE=(window.ELYNDRA_DATA&&window.ELYNDRA_DATA.loreEssentials)||[];
+  if(!LORE.length) window.addEventListener('elyndra-data-ready',()=>{LORE=(window.ELYNDRA_DATA&&window.ELYNDRA_DATA.loreEssentials)||[]; init();});
+  function init(){
+  const grid=document.getElementById('lore-grid'), search=document.getElementById('lore-filter'),
+        cat=document.getElementById('lore-category'), count=document.getElementById('lore-count');
+  if(!grid) return;
+  [...new Set(LORE.map(x=>x.Category).filter(Boolean))].sort().forEach(c=>{
+    const o=document.createElement('option');o.value=c;o.textContent=c;cat.appendChild(o);
+  });
+  function render(){
+    const q=(search.value||'').toLowerCase().trim(), c=cat.value;
+    const out=LORE.filter(x=>(!c||x.Category===c)&&(!q||[x.Entity,x.Description,x.Category,x.Status].join(' ').toLowerCase().includes(q)));
+    count.textContent=out.length;
+    grid.innerHTML=out.map(x=>`<article class="lore-card">
+      <div class="lore-meta"><span>${esc(x.Category||'Lore')}</span><span>${esc(x.Status||'')}</span></div>
+      <h3>${esc(x.Entity||'Unnamed')}</h3><p>${esc(x.Description||'')}</p>
+    </article>`).join('') || '<p style="opacity:.6">No lore essentials match that search.</p>';
+  }
+  function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+  search.addEventListener('input',render);cat.addEventListener('change',render);render();
+  }
+  if(LORE.length) init();
+})();
+</script>
+
+
+</body></html>

@@ -1,0 +1,8 @@
+ELYNDRA SOL FANTASY REDESIGN — VALIDATION
+
+PASS | data.json | valid JSON
+PASS | world-bible-index-v15.json | valid JSON
+PASS | assets/visual-manifest.json | valid JSON
+PASS | canonical map SHA-256 | 89b11057e653927e36574f7e5f869836a749305b1aabf48c309fcae00786dbee
+PASS | static asset references | all local assets found
+PASS | required shell IDs | all present

@@ -1,0 +1,196 @@
+{
+  "version": "v9 interactive visual atlas",
+  "policy": "Place-focused visualization. Illustrative images are visual references only and do not alter canon. Canonical-map-detail images are crops from the immutable supplied map.",
+  "assets": [
+    {
+      "file": "valedorn-capital.jpg",
+      "title": "Valedorn",
+      "subtitle": "Capital city",
+      "region": "Thaloria",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    },
+    {
+      "file": "ravenford.jpg",
+      "title": "Ravenford",
+      "subtitle": "River city / trade hub",
+      "region": "Thaloria",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    },
+    {
+      "file": "whispering-wilds.jpg",
+      "title": "The Whispering Wilds",
+      "subtitle": "Forest realm / mystery",
+      "region": "Myreth",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    },
+    {
+      "file": "crownspine.jpg",
+      "title": "Crownspine",
+      "subtitle": "Mountain range / ancient frontier",
+      "region": "Vythar",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    },
+    {
+      "file": "eldergreen.jpg",
+      "title": "Eldergreen",
+      "subtitle": "Ancient forest / living landscape",
+      "region": "Thaloria",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    },
+    {
+      "file": "worldscar.jpg",
+      "title": "Worldscar",
+      "subtitle": "Veil scar / unknown",
+      "region": "Soryn",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    },
+    {
+      "file": "canonical-thaloria.jpg",
+      "title": "Thaloria",
+      "subtitle": "Canonical regional map detail",
+      "region": "Thaloria",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-vythar.jpg",
+      "title": "Vythar",
+      "subtitle": "Canonical regional map detail",
+      "region": "Vythar",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-caelth.jpg",
+      "title": "Caelth",
+      "subtitle": "Canonical regional map detail",
+      "region": "Caelth",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-eridan.jpg",
+      "title": "Eridan",
+      "subtitle": "Canonical regional map detail",
+      "region": "Eridan",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-soryn.jpg",
+      "title": "Soryn",
+      "subtitle": "Canonical regional map detail",
+      "region": "Soryn",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-myreth.jpg",
+      "title": "Myreth",
+      "subtitle": "Canonical regional map detail",
+      "region": "Myreth",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-queln.jpg",
+      "title": "Queln",
+      "subtitle": "Canonical regional map detail",
+      "region": "Queln",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-drakos.jpg",
+      "title": "Drakos",
+      "subtitle": "Canonical regional map detail",
+      "region": "Drakos",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-archipelagos.jpg",
+      "title": "The Archipelagos",
+      "subtitle": "Canonical island-region detail",
+      "region": "Multiple",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-distant-continent.jpg",
+      "title": "The Distant Continent",
+      "subtitle": "Partially known / unresolved",
+      "region": "Unknown",
+      "type": "canonical-map-detail",
+      "status": "Unknown",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-ashen-ring.jpg",
+      "title": "Ashen Ring",
+      "subtitle": "Canonical regional map detail",
+      "region": "Drakos",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "canonical-cerulean-sea.jpg",
+      "title": "Cerulean Sea",
+      "subtitle": "Canonical sea-region detail",
+      "region": "Multiple",
+      "type": "canonical-map-detail",
+      "status": "Canon visual reference",
+      "display": "map-detail",
+      "visualPolicy": "canonical-map-detail"
+    },
+    {
+      "file": "atlas-side-mountains.jpg",
+      "title": "Mountain Frontier Reference",
+      "subtitle": "Illustrative environment reference",
+      "region": "Vythar / Queln",
+      "type": "illustrative-place",
+      "status": "Canon visual reference",
+      "display": "place",
+      "visualPolicy": "illustrative"
+    }
+  ]
+}

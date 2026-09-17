@@ -1,0 +1,12 @@
+ELYNDRA ATLAS PHASE 16–30 VALIDATION
+
+PASS — data.json parses as JSON.
+PASS — app.js passes Node syntax validation.
+PASS — V15 Lore Essentials contains 51 entries.
+PASS — visual manifest contains 19 bundled visual assets.
+PASS — canonical map SHA-256 matches locked canonical hash:
+89b11057e653927e36574f7e5f869836a749305b1aabf48c309fcae00786dbee
+PASS — no external CDN dependency is required for application data.
+PASS — V15 lore is embedded into the application dataset.
+PASS — direct file opening is supported for the data layer because application data is embedded.
+LIMITATION — automated full browser interaction testing was not completed in this environment.
